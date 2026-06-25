@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smith Rancho Trophy Hunts – Colorado Elk · Mule Deer · Antelope</title>
+<title>Hunting Photos – Smith Rancho Trophy Hunts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -744,211 +745,122 @@
     .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   }
+
+  .page-hero { position: relative; height: 56vh; min-height: 380px; display: flex; align-items: flex-end; overflow: hidden; }
+  .page-hero-bg { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,10,6,0.5) 0%, rgba(13,10,6,0.3) 40%, rgba(13,10,6,0.9) 100%), url('images/photo-01.jpg') center 35% / cover no-repeat; }
+  .page-hero-content { position: relative; padding: 0 48px 56px; max-width: 800px; animation: fadeUp 1s ease both; }
+  .page-hero .hero-eyebrow { margin-bottom: 16px; }
+  .page-hero-h1 { font-family: var(--font-display); font-size: clamp(38px, 6vw, 68px); font-weight: 700; line-height: 1.05; color: var(--cream); margin-bottom: 16px; letter-spacing: -0.01em; }
+  .page-hero-h1 em { color: var(--gold); font-style: italic; }
+  .page-hero-sub { font-size: 15px; font-weight: 300; color: var(--cream-muted); line-height: 1.7; max-width: 540px; }
+  .gallery-section { padding: 80px 48px; }
+  .gallery-section.deep { background: var(--brown-deep); }
+  .gallery-section.mid { background: var(--brown-mid); }
+  .gallery-cat { max-width: 1200px; margin: 0 auto; }
+  .gallery-cat-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 28px; }
+  .gallery-cat-title { font-family: var(--font-display); font-size: clamp(24px, 2.6vw, 34px); font-weight: 700; color: var(--cream); }
+  .gallery-cat-title em { color: var(--gold); font-style: italic; }
+  .gallery-cat-line { flex: 1; height: 1px; background: var(--brown-border); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .gallery-grid.feature { grid-template-columns: 2fr 1fr 1fr; }
+  .g-item { position: relative; overflow: hidden; height: 280px; cursor: pointer; }
+  .g-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.78) saturate(0.78); transition: transform 0.6s ease, filter 0.4s; display: block; }
+  .g-item:hover img { transform: scale(1.05); filter: brightness(0.95) saturate(0.9); }
+  .g-item.wide { grid-column: span 2; }
+  .lightbox { position: fixed; inset: 0; background: rgba(8,5,3,0.96); z-index: 9999; display: none; align-items: center; justify-content: center; padding: 40px; }
+  .lightbox.open { display: flex; }
+  .lightbox img { max-width: 92%; max-height: 92%; object-fit: contain; border: 1px solid var(--brown-border); }
+  .lightbox-close { position: absolute; top: 24px; right: 32px; color: var(--cream); font-size: 36px; font-family: var(--font-display); cursor: pointer; line-height: 1; }
+  .lightbox-close:hover { color: var(--gold); }
+  .lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); color: var(--cream); font-size: 48px; cursor: pointer; padding: 0 24px; user-select: none; opacity: 0.7; }
+  .lightbox-nav:hover { color: var(--gold); opacity: 1; }
+  .lightbox-prev { left: 12px; } .lightbox-next { right: 12px; }
+  @media (max-width: 900px) {
+    .page-hero-content { padding: 0 24px 36px; }
+    .gallery-section { padding: 56px 24px; }
+    .gallery-grid, .gallery-grid.feature { grid-template-columns: 1fr 1fr; }
+    .g-item { height: 200px; }
+    .lightbox-nav { font-size: 32px; padding: 0 10px; }
+  }
+
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<!-- LOGO HEADER -->
 <div style="position:fixed; top:-35px; left:0; z-index:200; pointer-events:none;">
   <img src="images/logo.png" alt="Smith Rancho" style="height:280px; width:280px; object-fit:contain; display:block; filter:drop-shadow(0 2px 16px rgba(0,0,0,0.8));">
 </div>
 <nav>
-  <div class="nav-logo" >
-    
-    
-  </div>
+  <div class="nav-logo"></div>
   <ul class="nav-links">
     <li><a href="about.html">About</a></li>
     <li><a href="elk.html">Elk Hunts</a></li>
     <li><a href="muledeer.html">Mule Deer</a></li>
     <li><a href="antelope.html">Antelope</a></li>
     <li><a href="rates.html">Rates &amp; Dates</a></li>
-    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="gallery.html" style="color:var(--gold);">Gallery</a></li>
   </ul>
   <button class="nav-cta" onclick="window.location.href='contact.html'">Book a Hunt</button>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Northwest Colorado · Big Gulch Ranching for Wildlife</div>
-    <h1 class="hero-h1">57,000 Acres of <em>Premier</em> Hunting</h1>
-    <p class="hero-sub">Hunt elk, mule deer, and pronghorn antelope on private land near Steamboat Springs. No applications. Guaranteed licenses. Ninety days of season.</p>
-    <div class="hero-actions">
-      <button class="btn-gold" onclick="window.location.href='rates.html'">View Rates &amp; Dates</button>
-      <button class="btn-outline" onclick="window.location.href='#why'">Our Story</button>
-    </div>
-  </div>
-  <div class="hero-badge">
-    <div class="hero-badge-num">100%</div>
-    <div class="hero-badge-label">Antelope success rate</div>
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="hero-scroll-line"></div>
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="hero-eyebrow">Hunting Photos &middot; Smith Rancho</div>
+    <h1 class="page-hero-h1">Memories From <em>the Ranch</em></h1>
+    <p class="page-hero-sub">Decades of trophy elk, mule deer, and antelope &mdash; taken on 57,000 private acres in the heart of Northwest Colorado. Click any photo to view it full size.</p>
   </div>
 </section>
-
-<!-- STAT BAR -->
-<div class="stat-bar">
-  <div class="stat-item">
-    <span class="stat-num">57,000</span>
-    <span class="stat-label">Private acres</span>
+<section class="gallery-section deep"><div class="gallery-cat">
+  <div class="gallery-cat-head"><h2 class="gallery-cat-title">Colorado <em>Elk</em></h2><div class="gallery-cat-line"></div></div>
+  <div class="gallery-grid feature">
+    <div class="g-item wide"><img src="images/photo-01.jpg" alt="Bull elk harvest"></div>
+    <div class="g-item"><img src="images/photo-02.jpg" alt="Hunter with bull elk"></div>
+    <div class="g-item"><img src="images/photo-06.jpg" alt="Bull elk in field"></div>
+    <div class="g-item"><img src="images/photo-10.jpg" alt="Large 6x6 bull elk"></div>
+    <div class="g-item"><img src="images/photo-12.jpg" alt="Bull elk in snow"></div>
+    <div class="g-item"><img src="images/photo-16.jpg" alt="Elk hunt"></div>
   </div>
-  <div class="stat-item">
-    <span class="stat-num">90</span>
-    <span class="stat-label">Hunting days</span>
+</div></section>
+<section class="gallery-section mid"><div class="gallery-cat">
+  <div class="gallery-cat-head"><h2 class="gallery-cat-title">Mule <em>Deer</em></h2><div class="gallery-cat-line"></div></div>
+  <div class="gallery-grid">
+    <div class="g-item"><img src="images/photo-03.jpg" alt="Two hunters with mule deer"></div>
+    <div class="g-item"><img src="images/photo-07.jpg" alt="Big mule deer buck"></div>
+    <div class="g-item"><img src="images/photo-14.jpg" alt="Trophy mule deer buck"></div>
   </div>
-  <div class="stat-item">
-    <span class="stat-num">185+</span>
-    <span class="stat-label">Class mule deer</span>
+</div></section>
+<section class="gallery-section deep"><div class="gallery-cat">
+  <div class="gallery-cat-head"><h2 class="gallery-cat-title">Pronghorn <em>Antelope</em></h2><div class="gallery-cat-line"></div></div>
+  <div class="gallery-grid">
+    <div class="g-item"><img src="images/photo-04.jpg" alt="Pronghorn antelope"></div>
+    <div class="g-item"><img src="images/photo-17.jpg" alt="Antelope hunt"></div>
+    <div class="g-item"><img src="images/photo-18.jpg" alt="Antelope country"></div>
   </div>
-  <div class="stat-item">
-    <span class="stat-num">6-pt</span>
-    <span class="stat-label">Average bull elk</span>
+</div></section>
+<section class="gallery-section mid"><div class="gallery-cat">
+  <div class="gallery-cat-head"><h2 class="gallery-cat-title">Life at <em>Smith Rancho</em></h2><div class="gallery-cat-line"></div></div>
+  <div class="gallery-grid">
+    <div class="g-item"><img src="images/photo-09.jpg" alt="Ranch headquarters"></div>
+    <div class="g-item"><img src="images/photo-05.jpg" alt="Sheep on the ranch"></div>
+    <div class="g-item"><img src="images/photo-11.jpg" alt="Family at the ranch"></div>
+    <div class="g-item"><img src="images/photo-08.jpg" alt="Guardian dog in wildflowers"></div>
+    <div class="g-item"><img src="images/photo-13.jpg" alt="Mule deer and sheep wagon"></div>
+    <div class="g-item"><img src="images/photo-15.jpg" alt="Ranch life"></div>
   </div>
-  <div class="stat-item">
-    <span class="stat-num">Zero</span>
-    <span class="stat-label">Applications needed</span>
-  </div>
-</div>
-
-<!-- HUNTS SECTION -->
-<section class="hunts">
-  <div class="section-header">
-    <div class="section-eyebrow">What we offer</div>
-    <h2 class="section-title">Three world-class hunts, one ranch</h2>
-  </div>
-  <div class="hunts-grid">
-
-    <div class="hunt-card" onclick="window.location.href='elk.html'" style="cursor:pointer;">
-      <div class="hunt-img-bg" style="background-image: url('images/photo-03.jpg');"></div>
-      <div class="hunt-overlay">
-        <div class="hunt-tag">Sept 1 – Nov 29</div>
-        <div class="hunt-title">Colorado Elk</div>
-        <div class="hunt-desc">Average 5-point bulls with multiple 6-point harvests each season in the rugged Colorado Rockies.</div>
-        <div class="hunt-link">Learn more</div>
-      </div>
-    </div>
-
-    <div class="hunt-card" onclick="window.location.href='muledeer.html'" style="cursor:pointer;">
-      <div class="hunt-img-bg" style="background-image: url('images/photo-04.jpg');"></div>
-      <div class="hunt-overlay">
-        <div class="hunt-tag">160–190 Boone &amp; Crockett</div>
-        <div class="hunt-title">Mule Deer</div>
-        <div class="hunt-desc">Colorado's finest mule deer country. Average bucks 160–170 class, with trophy 185–190 taken recently.</div>
-        <div class="hunt-link">Learn more</div>
-      </div>
-    </div>
-
-    <div class="hunt-card" onclick="window.location.href='antelope.html'" style="cursor:pointer;">
-      <div class="hunt-img-bg" style="background-image: url('images/photo-05.jpg');"></div>
-      <div class="hunt-overlay">
-        <div class="hunt-tag">100% success rate</div>
-        <div class="hunt-title">Pronghorn Antelope</div>
-        <div class="hunt-desc">Herds of 100 or more roaming open ranch land. Mid-to-high 70s pronghorns with unmatched access.</div>
-        <div class="hunt-link">Learn more</div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- WHY SECTION -->
-<section class="why" id="why">
-  <div class="why-inner">
-    <div class="why-image-col">
-      <div class="why-img-wrap">
-        <div class="why-img"></div>
-        <div class="why-img-accent">
-          <div class="why-accent-num">28 mi</div>
-          <div class="why-accent-text">West of Steamboat Springs</div>
-        </div>
-      </div>
-    </div>
-    <div class="why-text">
-      <div class="section-eyebrow" style="justify-content:flex-start; margin-bottom:14px;">The Smith Rancho difference</div>
-      <h2>The Rocky Mountain experience you've been waiting for</h2>
-      <p class="why-body">Smith Rancho is part of Big Gulch Ranching for Wildlife — a program that gives us an extended season and guaranteed tags on 57,000 privately owned acres. You won't find this kind of access anywhere else in Colorado.</p>
-      <div class="why-features">
-        <div class="why-feature">
-          <div class="why-feature-icon"></div>
-          <div class="why-feature-text">
-            <strong>No draw required</strong>
-            Licenses are guaranteed — skip the application process entirely.
-          </div>
-        </div>
-        <div class="why-feature">
-          <div class="why-feature-icon"></div>
-          <div class="why-feature-text">
-            <strong>Private land only</strong>
-            57,000 exclusive acres, 10 miles north of Hayden, Colorado.
-          </div>
-        </div>
-        <div class="why-feature">
-          <div class="why-feature-icon"></div>
-          <div class="why-feature-text">
-            <strong>Extended season</strong>
-            Hunt for 90 days across all three species — far longer than public-land seasons.
-          </div>
-        </div>
-        <div class="why-feature">
-          <div class="why-feature-icon"></div>
-          <div class="why-feature-text">
-            <strong>On-site accommodations</strong>
-            Stay at the ranch headquarters — no long drives to camp every morning.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- GALLERY STRIP -->
-<div class="gallery-strip" id="gallery">
-  <div class="gallery-img" style="background-image: url('images/photo-06.jpg');"></div>
-  <div class="gallery-img" style="background-image: url('images/photo-07.jpg');"></div>
-  <div class="gallery-img" style="background-image: url('images/photo-08.jpg');"></div>
-  <div class="gallery-img" style="background-image: url('images/photo-09.jpg');"></div>
-</div>
-
-
-<!-- RANCH LIFE GALLERY -->
-<section style="padding:64px 48px; background:var(--brown-deep);">
-  <div class="section-header">
-    <div class="section-eyebrow">Life at Smith Rancho</div>
-    <h2 class="section-title">A real working ranch in the heart of Colorado</h2>
-  </div>
-  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:3px; max-width:1200px; margin:0 auto;">
-    <div style="background-image:url('images/photo-10.jpg'); background-size:cover; background-position:center; height:280px; filter:brightness(0.82) saturate(0.8);"></div>
-    <div style="background-image:url('images/photo-11.jpg'); background-size:cover; background-position:center top; height:280px; filter:brightness(0.82) saturate(0.8);"></div>
-    <div style="background-image:url('images/photo-12.jpg'); background-size:cover; background-position:center; height:280px; filter:brightness(0.82) saturate(0.8);"></div>
-    <div style="background-image:url('images/photo-13.jpg'); background-size:cover; background-position:center; height:280px; filter:brightness(0.82) saturate(0.8);"></div>
-    <div style="background-image:url('images/photo-14.jpg'); background-size:cover; background-position:center; height:280px; filter:brightness(0.88) saturate(0.85);"></div>
-    <div style="background-image:url('images/photo-15.jpg'); background-size:cover; background-position:center 30%; height:280px; filter:brightness(0.82) saturate(0.8);"></div>
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="testimonial">
-  <div class="testimonial-stars">★★★★★</div>
-  <p class="testimonial-quote">"You will see more elk than you have ever seen before — unless you have hunted with us in the past. A hunting experience that will never be forgotten in the beautiful Rocky Mountains."</p>
-  <div class="testimonial-author">Smith Rancho · Northwest Colorado</div>
-</section>
-
-<!-- CTA BAND -->
+</div></section>
 <div class="cta-band">
-  <div class="cta-band-text">
-    <h2>Ready to plan your hunt?</h2>
-    <p>Spots fill fast. Contact us today to check availability and reserve your dates.<br>Elk, mule deer, and antelope — all on one ranch, all season long.</p>
-  </div>
+  <div class="cta-band-text"><h2>Want to make your own memories?</h2><p>Guaranteed licenses, 90-day season, 57,000 private acres. Reach out to plan your hunt.</p></div>
   <div class="cta-band-actions">
     <div class="cta-phone">602.369.3522</div>
-    <button class="btn-dark" onclick="window.location.href='mailto:smithrancho264@gmail.com'">Send a Message</button>
-    <button class="btn-outline-dark" onclick="window.location.href='mailto:smithrancho264@gmail.com'">Email Us</button>
+    <button class="btn-dark" onclick="window.location.href='contact.html'">Contact Us</button>
+    <button class="btn-outline-dark" onclick="window.location.href='rates.html'">Rates &amp; Dates</button>
   </div>
+</div>
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+  <span class="lightbox-nav lightbox-prev" onclick="changeLightbox(-1)">&#8249;</span>
+  <img id="lightbox-img" src="" alt="">
+  <span class="lightbox-nav lightbox-next" onclick="changeLightbox(1)">&#8250;</span>
 </div>
 
 <!-- FOOTER -->
@@ -979,14 +891,14 @@
         <li><a href="about.html">About Smith Rancho</a></li>
         <li><a href="#">Accommodations</a></li>
         <li><a href="#">Equipment</a></li>
-        <li><a href="gallery.html">Hunting Photos</a></li>
+        <li><a href="#gallery">Hunting Photos</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
         <li><a href="rates.html">Rates &amp; Dates</a></li>
-        <li><a href="contact.html">Book a Hunt</a></li>
+        <li><a href="rates.html">Book a Hunt</a></li>
         <li><a href="tel:6023693522">602.369.3522</a></li>
         <li><a href="mailto:smithrancho264@gmail.com">Email Us</a></li>
       </ul>
@@ -997,6 +909,25 @@
     <div class="footer-contact">Hayden, Colorado · <a href="mailto:smithrancho264@gmail.com">smithrancho264@gmail.com</a></div>
   </div>
 </footer>
+
+<script>
+  var galleryImgs = Array.prototype.slice.call(document.querySelectorAll('.g-item img'));
+  var currentIdx = 0;
+  galleryImgs.forEach(function(img, i) {
+    img.parentElement.addEventListener('click', function() { openLightbox(i); });
+  });
+  function openLightbox(i) { currentIdx = i; document.getElementById('lightbox-img').src = galleryImgs[i].src; document.getElementById('lightbox').classList.add('open'); }
+  function closeLightbox() { document.getElementById('lightbox').classList.remove('open'); }
+  function changeLightbox(dir) { currentIdx = (currentIdx + dir + galleryImgs.length) % galleryImgs.length; document.getElementById('lightbox-img').src = galleryImgs[currentIdx].src; }
+  document.getElementById('lightbox').addEventListener('click', function(e) { if (e.target.id === 'lightbox') closeLightbox(); });
+  document.addEventListener('keydown', function(e) {
+    if (!document.getElementById('lightbox').classList.contains('open')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') changeLightbox(-1);
+    if (e.key === 'ArrowRight') changeLightbox(1);
+  });
+</script>
+
 
 </body>
 </html>

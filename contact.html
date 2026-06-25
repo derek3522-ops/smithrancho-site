@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Smith Rancho Trophy Hunts – Colorado Elk · Mule Deer · Antelope</title>
+<title>Contact – Smith Rancho Trophy Hunts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -744,20 +745,67 @@
     .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
     .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   }
+
+  .page-hero { position: relative; height: 46vh; min-height: 320px; display: flex; align-items: flex-end; overflow: hidden; }
+  .page-hero-bg { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,10,6,0.55) 0%, rgba(13,10,6,0.35) 40%, rgba(13,10,6,0.92) 100%), url('images/photo-09.jpg') center 45% / cover no-repeat; }
+  .page-hero-content { position: relative; padding: 0 48px 48px; max-width: 800px; animation: fadeUp 1s ease both; }
+  .page-hero .hero-eyebrow { margin-bottom: 16px; }
+  .page-hero-h1 { font-family: var(--font-display); font-size: clamp(38px, 6vw, 64px); font-weight: 700; line-height: 1.05; color: var(--cream); margin-bottom: 14px; letter-spacing: -0.01em; }
+  .page-hero-h1 em { color: var(--gold); font-style: italic; }
+  .page-hero-sub { font-size: 15px; font-weight: 300; color: var(--cream-muted); line-height: 1.7; max-width: 520px; }
+
+  .contact-main { padding: 90px 48px; background: var(--brown-mid); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 64px; max-width: 1100px; margin: 0 auto; align-items: start; }
+
+  .contact-info h2 { font-family: var(--font-display); font-size: clamp(24px, 2.6vw, 32px); font-weight: 700; color: var(--cream); line-height: 1.2; margin-bottom: 8px; }
+  .contact-info h2 em { color: var(--gold); font-style: italic; }
+  .contact-info-lead { font-size: 14px; font-weight: 300; color: var(--cream-muted); line-height: 1.75; margin-bottom: 32px; }
+  .contact-detail { display: flex; align-items: flex-start; gap: 16px; padding: 20px 0; border-bottom: 1px solid var(--brown-border); }
+  .contact-detail:first-of-type { border-top: 1px solid var(--brown-border); }
+  .contact-detail-icon { font-size: 18px; margin-top: 2px; flex-shrink: 0; width: 24px; }
+  .contact-detail-label { font-family: var(--font-label); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 4px; }
+  .contact-detail-value { font-size: 16px; font-weight: 400; color: var(--cream); }
+  .contact-detail-value a { color: var(--cream); text-decoration: none; transition: color 0.2s; }
+  .contact-detail-value a:hover { color: var(--gold); }
+  .contact-detail-note { font-size: 12px; color: var(--text-secondary); margin-top: 2px; }
+
+  .contact-form-wrap { background: var(--brown-surface); border: 1px solid var(--brown-border); padding: 40px; }
+  .contact-form-wrap h3 { font-family: var(--font-display); font-size: 22px; font-weight: 700; color: var(--cream); margin-bottom: 6px; }
+  .contact-form-wrap > p { font-size: 13px; color: var(--cream-muted); margin-bottom: 28px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-field { margin-bottom: 18px; }
+  .form-field label { display: block; font-family: var(--font-label); font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 7px; }
+  .form-field input, .form-field select, .form-field textarea {
+    width: 100%; background: var(--brown-deep); border: 1px solid var(--brown-border); color: var(--cream);
+    font-family: var(--font-body); font-size: 14px; padding: 12px 14px; transition: border-color 0.2s;
+  }
+  .form-field input:focus, .form-field select:focus, .form-field textarea:focus { outline: none; border-color: var(--gold); }
+  .form-field textarea { resize: vertical; min-height: 110px; }
+  .form-field select { cursor: pointer; }
+  .form-submit {
+    width: 100%; background: var(--gold); color: var(--brown-deep); border: none;
+    font-family: var(--font-label); font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+    padding: 16px; cursor: pointer; transition: background 0.2s; margin-top: 6px;
+  }
+  .form-submit:hover { background: var(--gold-light); }
+  .form-note { font-size: 11px; color: var(--text-secondary); text-align: center; margin-top: 14px; line-height: 1.5; }
+
+  @media (max-width: 900px) {
+    .page-hero-content { padding: 0 24px 32px; }
+    .contact-main { padding: 56px 24px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+    .contact-form-wrap { padding: 28px; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+  }
+
 </style>
 </head>
 <body>
-
-<!-- NAV -->
-<!-- LOGO HEADER -->
 <div style="position:fixed; top:-35px; left:0; z-index:200; pointer-events:none;">
   <img src="images/logo.png" alt="Smith Rancho" style="height:280px; width:280px; object-fit:contain; display:block; filter:drop-shadow(0 2px 16px rgba(0,0,0,0.8));">
 </div>
 <nav>
-  <div class="nav-logo" >
-    
-    
-  </div>
+  <div class="nav-logo"></div>
   <ul class="nav-links">
     <li><a href="about.html">About</a></li>
     <li><a href="elk.html">Elk Hunts</a></li>
@@ -769,185 +817,114 @@
   <button class="nav-cta" onclick="window.location.href='contact.html'">Book a Hunt</button>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-content">
-    <div class="hero-eyebrow">Northwest Colorado · Big Gulch Ranching for Wildlife</div>
-    <h1 class="hero-h1">57,000 Acres of <em>Premier</em> Hunting</h1>
-    <p class="hero-sub">Hunt elk, mule deer, and pronghorn antelope on private land near Steamboat Springs. No applications. Guaranteed licenses. Ninety days of season.</p>
-    <div class="hero-actions">
-      <button class="btn-gold" onclick="window.location.href='rates.html'">View Rates &amp; Dates</button>
-      <button class="btn-outline" onclick="window.location.href='#why'">Our Story</button>
-    </div>
-  </div>
-  <div class="hero-badge">
-    <div class="hero-badge-num">100%</div>
-    <div class="hero-badge-label">Antelope success rate</div>
-  </div>
-  <div class="hero-scroll">
-    <span>Scroll</span>
-    <div class="hero-scroll-line"></div>
+<section class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-content">
+    <div class="hero-eyebrow">Contact &middot; Book Your Hunt</div>
+    <h1 class="page-hero-h1">Let's Plan <em>Your Hunt</em></h1>
+    <p class="page-hero-sub">Spots fill fast and licenses are guaranteed. Reach out and we'll help you put together the trip of a lifetime.</p>
   </div>
 </section>
 
-<!-- STAT BAR -->
-<div class="stat-bar">
-  <div class="stat-item">
-    <span class="stat-num">57,000</span>
-    <span class="stat-label">Private acres</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num">90</span>
-    <span class="stat-label">Hunting days</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num">185+</span>
-    <span class="stat-label">Class mule deer</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num">6-pt</span>
-    <span class="stat-label">Average bull elk</span>
-  </div>
-  <div class="stat-item">
-    <span class="stat-num">Zero</span>
-    <span class="stat-label">Applications needed</span>
-  </div>
-</div>
+<section class="contact-main">
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h2>Get in <em>touch</em></h2>
+      <p class="contact-info-lead">Call Brad directly, send an email, or fill out the form and we'll get right back to you. We're happy to answer any questions about dates, rates, or the ranch.</p>
 
-<!-- HUNTS SECTION -->
-<section class="hunts">
-  <div class="section-header">
-    <div class="section-eyebrow">What we offer</div>
-    <h2 class="section-title">Three world-class hunts, one ranch</h2>
-  </div>
-  <div class="hunts-grid">
-
-    <div class="hunt-card" onclick="window.location.href='elk.html'" style="cursor:pointer;">
-      <div class="hunt-img-bg" style="background-image: url('images/photo-03.jpg');"></div>
-      <div class="hunt-overlay">
-        <div class="hunt-tag">Sept 1 – Nov 29</div>
-        <div class="hunt-title">Colorado Elk</div>
-        <div class="hunt-desc">Average 5-point bulls with multiple 6-point harvests each season in the rugged Colorado Rockies.</div>
-        <div class="hunt-link">Learn more</div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">&#128222;</div>
+        <div>
+          <div class="contact-detail-label">Phone</div>
+          <div class="contact-detail-value"><a href="tel:6023693522">602.369.3522</a></div>
+          <div class="contact-detail-note">Call or text &mdash; the fastest way to reach us</div>
+        </div>
       </div>
-    </div>
 
-    <div class="hunt-card" onclick="window.location.href='muledeer.html'" style="cursor:pointer;">
-      <div class="hunt-img-bg" style="background-image: url('images/photo-04.jpg');"></div>
-      <div class="hunt-overlay">
-        <div class="hunt-tag">160–190 Boone &amp; Crockett</div>
-        <div class="hunt-title">Mule Deer</div>
-        <div class="hunt-desc">Colorado's finest mule deer country. Average bucks 160–170 class, with trophy 185–190 taken recently.</div>
-        <div class="hunt-link">Learn more</div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">&#9993;</div>
+        <div>
+          <div class="contact-detail-label">Email</div>
+          <div class="contact-detail-value"><a href="mailto:smithrancho264@gmail.com">smithrancho264@gmail.com</a></div>
+        </div>
       </div>
-    </div>
 
-    <div class="hunt-card" onclick="window.location.href='antelope.html'" style="cursor:pointer;">
-      <div class="hunt-img-bg" style="background-image: url('images/photo-05.jpg');"></div>
-      <div class="hunt-overlay">
-        <div class="hunt-tag">100% success rate</div>
-        <div class="hunt-title">Pronghorn Antelope</div>
-        <div class="hunt-desc">Herds of 100 or more roaming open ranch land. Mid-to-high 70s pronghorns with unmatched access.</div>
-        <div class="hunt-link">Learn more</div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">&#128205;</div>
+        <div>
+          <div class="contact-detail-label">Location</div>
+          <div class="contact-detail-value">Hayden, Colorado</div>
+          <div class="contact-detail-note">10 miles north of Hayden &middot; 22 miles west of Steamboat Springs</div>
+        </div>
       </div>
-    </div>
 
-  </div>
-</section>
-
-<!-- WHY SECTION -->
-<section class="why" id="why">
-  <div class="why-inner">
-    <div class="why-image-col">
-      <div class="why-img-wrap">
-        <div class="why-img"></div>
-        <div class="why-img-accent">
-          <div class="why-accent-num">28 mi</div>
-          <div class="why-accent-text">West of Steamboat Springs</div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon">&#127794;</div>
+        <div>
+          <div class="contact-detail-label">The Hunt</div>
+          <div class="contact-detail-value">Elk &middot; Mule Deer &middot; Antelope</div>
+          <div class="contact-detail-note">57,000 private acres &middot; 90-day season &middot; guaranteed licenses</div>
         </div>
       </div>
     </div>
-    <div class="why-text">
-      <div class="section-eyebrow" style="justify-content:flex-start; margin-bottom:14px;">The Smith Rancho difference</div>
-      <h2>The Rocky Mountain experience you've been waiting for</h2>
-      <p class="why-body">Smith Rancho is part of Big Gulch Ranching for Wildlife — a program that gives us an extended season and guaranteed tags on 57,000 privately owned acres. You won't find this kind of access anywhere else in Colorado.</p>
-      <div class="why-features">
-        <div class="why-feature">
-          <div class="why-feature-icon"></div>
-          <div class="why-feature-text">
-            <strong>No draw required</strong>
-            Licenses are guaranteed — skip the application process entirely.
+
+    <div class="contact-form-wrap">
+      <h3>Send an inquiry</h3>
+      <p>Tell us a bit about the hunt you're after and we'll be in touch.</p>
+      <form onsubmit="return submitInquiry(event)">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-name">Name *</label>
+            <input type="text" id="f-name" required>
+          </div>
+          <div class="form-field">
+            <label for="f-phone">Phone</label>
+            <input type="tel" id="f-phone">
           </div>
         </div>
-        <div class="why-feature">
-          <div class="why-feature-icon"></div>
-          <div class="why-feature-text">
-            <strong>Private land only</strong>
-            57,000 exclusive acres, 10 miles north of Hayden, Colorado.
+        <div class="form-field">
+          <label for="f-email">Email *</label>
+          <input type="email" id="f-email" required>
+        </div>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="f-hunt">Hunt Interested In</label>
+            <select id="f-hunt">
+              <option>Elk</option>
+              <option>Mule Deer</option>
+              <option>Antelope</option>
+              <option>Elk / Deer Combo</option>
+              <option>Elk / Antelope Combo</option>
+              <option>Deer / Antelope Combo</option>
+              <option>Not sure yet</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="f-party">Party Size</label>
+            <input type="text" id="f-party" placeholder="e.g. 2 hunters">
           </div>
         </div>
-        <div class="why-feature">
-          <div class="why-feature-icon"></div>
-          <div class="why-feature-text">
-            <strong>Extended season</strong>
-            Hunt for 90 days across all three species — far longer than public-land seasons.
-          </div>
+        <div class="form-field">
+          <label for="f-dates">Preferred Dates</label>
+          <input type="text" id="f-dates" placeholder="e.g. early October 2026">
         </div>
-        <div class="why-feature">
-          <div class="why-feature-icon"></div>
-          <div class="why-feature-text">
-            <strong>On-site accommodations</strong>
-            Stay at the ranch headquarters — no long drives to camp every morning.
-          </div>
+        <div class="form-field">
+          <label for="f-msg">Message</label>
+          <textarea id="f-msg" placeholder="Anything else we should know?"></textarea>
         </div>
-      </div>
+        <button type="submit" class="form-submit">Send Inquiry</button>
+        <p class="form-note">This opens your email app with the details filled in. Prefer to call? Reach Brad at 602.369.3522.</p>
+      </form>
     </div>
   </div>
 </section>
 
-<!-- GALLERY STRIP -->
-<div class="gallery-strip" id="gallery">
-  <div class="gallery-img" style="background-image: url('images/photo-06.jpg');"></div>
-  <div class="gallery-img" style="background-image: url('images/photo-07.jpg');"></div>
-  <div class="gallery-img" style="background-image: url('images/photo-08.jpg');"></div>
-  <div class="gallery-img" style="background-image: url('images/photo-09.jpg');"></div>
-</div>
-
-
-<!-- RANCH LIFE GALLERY -->
-<section style="padding:64px 48px; background:var(--brown-deep);">
-  <div class="section-header">
-    <div class="section-eyebrow">Life at Smith Rancho</div>
-    <h2 class="section-title">A real working ranch in the heart of Colorado</h2>
-  </div>
-  <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:3px; max-width:1200px; margin:0 auto;">
-    <div style="background-image:url('images/photo-10.jpg'); background-size:cover; background-position:center; height:280px; filter:brightness(0.82) saturate(0.8);"></div>
-    <div style="background-image:url('images/photo-11.jpg'); background-size:cover; background-position:center top; height:280px; filter:brightness(0.82) saturate(0.8);"></div>
-    <div style="background-image:url('images/photo-12.jpg'); background-size:cover; background-position:center; height:280px; filter:brightness(0.82) saturate(0.8);"></div>
-    <div style="background-image:url('images/photo-13.jpg'); background-size:cover; background-position:center; height:280px; filter:brightness(0.82) saturate(0.8);"></div>
-    <div style="background-image:url('images/photo-14.jpg'); background-size:cover; background-position:center; height:280px; filter:brightness(0.88) saturate(0.85);"></div>
-    <div style="background-image:url('images/photo-15.jpg'); background-size:cover; background-position:center 30%; height:280px; filter:brightness(0.82) saturate(0.8);"></div>
-  </div>
-</section>
-
-<!-- TESTIMONIAL -->
-<section class="testimonial">
-  <div class="testimonial-stars">★★★★★</div>
-  <p class="testimonial-quote">"You will see more elk than you have ever seen before — unless you have hunted with us in the past. A hunting experience that will never be forgotten in the beautiful Rocky Mountains."</p>
-  <div class="testimonial-author">Smith Rancho · Northwest Colorado</div>
-</section>
-
-<!-- CTA BAND -->
 <div class="cta-band">
-  <div class="cta-band-text">
-    <h2>Ready to plan your hunt?</h2>
-    <p>Spots fill fast. Contact us today to check availability and reserve your dates.<br>Elk, mule deer, and antelope — all on one ranch, all season long.</p>
-  </div>
+  <div class="cta-band-text"><h2>Ready when you are</h2><p>No draw, no waiting &mdash; just a guaranteed license and a hunt you won't forget.</p></div>
   <div class="cta-band-actions">
     <div class="cta-phone">602.369.3522</div>
-    <button class="btn-dark" onclick="window.location.href='mailto:smithrancho264@gmail.com'">Send a Message</button>
-    <button class="btn-outline-dark" onclick="window.location.href='mailto:smithrancho264@gmail.com'">Email Us</button>
+    <button class="btn-dark" onclick="window.location.href='mailto:smithrancho264@gmail.com'">Email Us</button>
+    <button class="btn-outline-dark" onclick="window.location.href='rates.html'">Rates &amp; Dates</button>
   </div>
 </div>
 
@@ -979,14 +956,14 @@
         <li><a href="about.html">About Smith Rancho</a></li>
         <li><a href="#">Accommodations</a></li>
         <li><a href="#">Equipment</a></li>
-        <li><a href="gallery.html">Hunting Photos</a></li>
+        <li><a href="#gallery">Hunting Photos</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
         <li><a href="rates.html">Rates &amp; Dates</a></li>
-        <li><a href="contact.html">Book a Hunt</a></li>
+        <li><a href="rates.html">Book a Hunt</a></li>
         <li><a href="tel:6023693522">602.369.3522</a></li>
         <li><a href="mailto:smithrancho264@gmail.com">Email Us</a></li>
       </ul>
@@ -997,6 +974,31 @@
     <div class="footer-contact">Hayden, Colorado · <a href="mailto:smithrancho264@gmail.com">smithrancho264@gmail.com</a></div>
   </div>
 </footer>
+
+<script>
+  function submitInquiry(e) {
+    e.preventDefault();
+    var name = document.getElementById('f-name').value.trim();
+    var email = document.getElementById('f-email').value.trim();
+    var phone = document.getElementById('f-phone').value.trim();
+    var hunt = document.getElementById('f-hunt').value;
+    var dates = document.getElementById('f-dates').value.trim();
+    var party = document.getElementById('f-party').value.trim();
+    var msg = document.getElementById('f-msg').value.trim();
+    if (!name || !email) { alert('Please enter at least your name and email.'); return false; }
+    var subject = 'Hunt Inquiry from ' + name;
+    var body = 'Name: ' + name + '\n'
+      + 'Email: ' + email + '\n'
+      + 'Phone: ' + phone + '\n'
+      + 'Hunt interested in: ' + hunt + '\n'
+      + 'Preferred dates: ' + dates + '\n'
+      + 'Party size: ' + party + '\n\n'
+      + 'Message:\n' + msg;
+    window.location.href = 'mailto:smithrancho264@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    return false;
+  }
+</script>
+
 
 </body>
 </html>
