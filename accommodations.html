@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Lodge &amp; Accommodations – Smith Rancho Trophy Hunts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --gold: #c8a462;
+    --gold-light: #e0c080;
+    --gold-dark: #9a7a40;
+    --brown-deep: #0d0a06;
+    --brown-dark: #141008;
+    --brown-mid: #1e170d;
+    --brown-surface: #261e12;
+    --brown-border: #3a2e1a;
+    --cream: #f0e6ce;
+    --cream-muted: #b8a880;
+    --text-secondary: #7a6a4a;
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-body: 'Barlow', sans-serif;
+    --font-label: 'Barlow Condensed', sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { background: var(--brown-deep); color: var(--cream); font-family: var(--font-body); font-weight: 300; overflow-x: hidden; }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 48px;
+    height: 72px;
+    background: rgba(13,10,6,0.96);
+    border-bottom: 1px solid var(--brown-border);
+    backdrop-filter: blur(8px);
+  }
+  .nav-logo { display: flex; flex-direction: column; }
+  .nav-logo-main { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--gold); letter-spacing: 0.04em; line-height: 1; }
+  .nav-logo-sub { font-family: var(--font-label); font-size: 9px; font-weight: 500; letter-spacing: 0.22em; color: var(--text-secondary); text-transform: uppercase; margin-top: 3px; }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { font-family: var(--font-label); font-size: 11px; font-weight: 500; letter-spacing: 0.14em; color: var(--text-secondary); text-decoration: none; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+  .nav-cta { font-family: var(--font-label); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: var(--gold); color: var(--brown-deep); border: none; padding: 10px 22px; cursor: pointer; transition: background 0.2s; }
+  .nav-cta:hover { background: var(--gold-light); }
+
+  /* ── BUTTONS ── */
+  .btn-gold { font-family: var(--font-label); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: var(--gold); color: var(--brown-deep); border: none; padding: 14px 32px; cursor: pointer; transition: background 0.2s, transform 0.15s; }
+  .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); }
+  .btn-outline { font-family: var(--font-label); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: var(--gold); border: 1px solid rgba(200,164,98,0.4); padding: 14px 32px; cursor: pointer; transition: border-color 0.2s, color 0.2s; }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold-light); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(6px); }
+  }
+
+  /* ── PAGE HERO (SPLIT — showcases the vertical trophy photo) ── */
+  .page-hero { display: grid; grid-template-columns: 1fr 1fr; min-height: 660px; background: var(--brown-deep); padding-top: 72px; }
+  .page-hero-text { display: flex; flex-direction: column; justify-content: center; padding: 64px 56px; max-width: 680px; justify-self: end; animation: fadeUp 1s ease both; }
+  .page-hero-img { position: relative; background: var(--brown-dark); border-left: 1px solid var(--brown-border); overflow: hidden; }
+  .page-hero-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+  .page-hero-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(13,10,6,0.5) 0%, transparent 20%); pointer-events: none; }
+  .page-hero .hero-eyebrow { margin-bottom: 18px; display: flex; align-items: center; gap: 12px; font-family: var(--font-label); font-size: 10px; font-weight: 500; letter-spacing: 0.24em; color: var(--gold); text-transform: uppercase; }
+  .page-hero .hero-eyebrow::before { content: ''; display: block; width: 36px; height: 1px; background: var(--gold); flex-shrink: 0; }
+  .page-hero-h1 { font-family: var(--font-display); font-size: clamp(40px, 5vw, 72px); font-weight: 700; line-height: 1.05; color: var(--cream); margin-bottom: 18px; letter-spacing: -0.01em; }
+  .page-hero-h1 em { color: var(--gold); font-style: italic; }
+  .page-hero-sub { font-size: 16px; font-weight: 300; color: var(--cream-muted); line-height: 1.7; max-width: 520px; }
+
+  /* ── STAT BAR ── */
+  .stat-bar { display: grid; grid-template-columns: repeat(5, 1fr); background: var(--brown-dark); border-top: 1px solid var(--brown-border); border-bottom: 1px solid var(--brown-border); }
+  .stat-item { padding: 22px 20px; text-align: center; border-right: 1px solid var(--brown-border); transition: background 0.2s; }
+  .stat-item:last-child { border-right: none; }
+  .stat-item:hover { background: var(--brown-surface); }
+  .stat-num { font-family: var(--font-display); font-size: 24px; font-weight: 700; color: var(--gold); display: block; }
+  .stat-label { font-family: var(--font-label); font-size: 9px; font-weight: 500; letter-spacing: 0.18em; color: var(--text-secondary); text-transform: uppercase; margin-top: 4px; display: block; }
+
+  /* ── SECTION HEADERS ── */
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-eyebrow { font-family: var(--font-label); font-size: 10px; font-weight: 500; letter-spacing: 0.22em; color: var(--gold); text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 14px; }
+  .section-eyebrow::before, .section-eyebrow::after { content: ''; display: block; width: 48px; height: 1px; background: var(--gold-dark); }
+  .section-title { font-family: var(--font-display); font-size: clamp(28px, 3vw, 40px); font-weight: 700; color: var(--cream); }
+  .section-title em { color: var(--gold); font-style: italic; }
+
+  /* ── STORY ── */
+  .story { padding: 100px 48px; background: var(--brown-mid); }
+  .story-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; max-width: 1200px; margin: 0 auto; }
+  .story-text h2 { font-family: var(--font-display); font-size: clamp(26px, 2.6vw, 38px); font-weight: 700; color: var(--cream); line-height: 1.2; margin-bottom: 22px; }
+  .story-text h2 em { color: var(--gold); font-style: italic; }
+  .story-body { font-size: 15px; font-weight: 300; color: var(--cream-muted); line-height: 1.85; }
+  .story-body p + p { margin-top: 18px; }
+  .story-img-wrap { position: relative; }
+  .story-img { width: 100%; height: 380px; background-size: cover; background-position: center; filter: brightness(0.8) saturate(0.75); }
+  .story-img-accent { position: absolute; bottom: -28px; right: -28px; background: var(--brown-surface); border: 1px solid var(--brown-border); border-left: 3px solid var(--gold); padding: 20px 28px; }
+  .story-accent-num { font-family: var(--font-display); font-size: 32px; font-weight: 700; color: var(--gold); line-height: 1; }
+  .story-accent-text { font-family: var(--font-label); font-size: 9px; font-weight: 500; letter-spacing: 0.18em; color: var(--text-secondary); text-transform: uppercase; margin-top: 4px; }
+
+  /* ── SEASON SPLIT ── */
+  .season-split { padding: 100px 48px; background: var(--brown-deep); }
+  .season-row { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; max-width: 1200px; margin: 0 auto; }
+  .season-row + .season-row { margin-top: 80px; }
+  .season-row.reverse { direction: rtl; }
+  .season-row.reverse > * { direction: ltr; }
+  .season-img { position: relative; height: 360px; background-size: cover; background-position: center; filter: brightness(0.78) saturate(0.72); }
+  .season-tag { position: absolute; top: 20px; left: 20px; background: rgba(13,10,6,0.9); border: 1px solid var(--brown-border); border-left: 3px solid var(--gold); color: var(--gold); font-family: var(--font-label); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; padding: 8px 14px; backdrop-filter: blur(4px); }
+  .season-text h3 { font-family: var(--font-display); font-size: clamp(24px, 2.4vw, 32px); font-weight: 700; color: var(--cream); margin-bottom: 16px; line-height: 1.2; }
+  .season-text h3 em { color: var(--gold); font-style: italic; }
+  .season-text p { font-size: 14px; font-weight: 300; color: var(--cream-muted); line-height: 1.8; }
+  .season-text p + p { margin-top: 14px; }
+
+  /* ── INCLUDED ── */
+  .included { padding: 100px 48px; background: var(--brown-mid); }
+  .included-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; max-width: 1200px; margin: 0 auto; }
+  .included-card { background: var(--brown-surface); padding: 36px 32px; border: 1px solid var(--brown-border); transition: border-color 0.25s, background 0.25s; }
+  .included-card:hover { border-color: var(--gold-dark); background: #2c2214; }
+  .included-num { font-family: var(--font-display); font-size: 14px; font-weight: 700; color: var(--gold-dark); letter-spacing: 0.1em; margin-bottom: 16px; }
+  .included-card h4 { font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--cream); margin-bottom: 8px; }
+  .included-card p { font-size: 13px; font-weight: 300; color: var(--cream-muted); line-height: 1.6; }
+
+  /* ── LEGACY PHOTO STRIP ── */
+  .lion-gallery { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 3px; height: 340px; }
+  .lion-gallery-img { background-size: cover; background-position: center top; filter: brightness(0.68) saturate(0.55); transition: filter 0.4s; }
+  .lion-gallery-img:hover { filter: brightness(0.88) saturate(0.75); }
+
+  /* ── LEGACY BANNER ── */
+  .legacy-banner {
+    padding: 72px 48px;
+    background: var(--brown-deep);
+    border-top: 1px solid var(--brown-border);
+    border-bottom: 1px solid var(--brown-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    max-width: 100%;
+  }
+  .legacy-banner-text { max-width: 540px; }
+  .legacy-banner-text h2 { font-family: var(--font-display); font-size: clamp(26px, 2.8vw, 38px); font-weight: 700; color: var(--cream); line-height: 1.2; margin-bottom: 16px; }
+  .legacy-banner-text h2 em { color: var(--gold); font-style: italic; }
+  .legacy-banner-text p { font-size: 15px; font-weight: 300; color: var(--cream-muted); line-height: 1.85; }
+  .legacy-banner-img { flex-shrink: 0; width: 400px; height: 300px; background: url('images/mountain-lion-05.jpg') center / cover; filter: brightness(0.75) saturate(0.6); }
+
+  /* ── DETAILS ── */
+  .details { padding: 100px 48px; background: var(--brown-mid); }
+  .details-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0 64px; max-width: 900px; margin: 48px auto 0; }
+  .detail-row { display: flex; justify-content: space-between; align-items: baseline; padding: 18px 0; border-bottom: 1px solid var(--brown-border); }
+  .detail-label { font-family: var(--font-label); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold-dark); }
+  .detail-value { font-size: 14px; font-weight: 300; color: var(--cream); text-align: right; max-width: 60%; }
+
+  /* ── CTA BAND ── */
+  .cta-band { background: var(--brown-surface); border-top: 1px solid var(--brown-border); border-bottom: 1px solid var(--brown-border); padding: 56px 48px; display: flex; align-items: center; justify-content: space-between; gap: 40px; }
+  .cta-band-text h2 { font-family: var(--font-display); font-size: clamp(22px, 2.4vw, 32px); font-weight: 700; color: var(--cream); margin-bottom: 8px; }
+  .cta-band-text p { font-size: 14px; font-weight: 300; color: var(--cream-muted); max-width: 480px; line-height: 1.7; }
+  .cta-band-actions { display: flex; align-items: center; gap: 16px; flex-shrink: 0; flex-wrap: wrap; }
+  .cta-phone { font-family: var(--font-display); font-size: 26px; font-weight: 500; color: var(--gold); white-space: nowrap; }
+  .btn-dark { font-family: var(--font-label); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: var(--gold); color: var(--brown-deep); border: none; padding: 14px 30px; cursor: pointer; transition: background 0.2s; }
+  .btn-dark:hover { background: var(--gold-light); }
+  .btn-outline-dark { font-family: var(--font-label); font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; background: transparent; color: var(--cream-muted); border: 1px solid var(--brown-border); padding: 14px 30px; cursor: pointer; transition: background 0.2s; }
+  .btn-outline-dark:hover { background: rgba(13,10,6,0.1); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--brown-dark); border-top: 1px solid var(--brown-border); padding: 48px; }
+  .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--brown-border); }
+  .footer-brand .footer-logo-main { font-family: var(--font-display); font-size: 20px; font-weight: 500; color: var(--gold); display: block; margin-bottom: 4px; }
+  .footer-brand .footer-logo-sub { font-family: var(--font-label); font-size: 9px; letter-spacing: 0.2em; color: var(--text-secondary); text-transform: uppercase; }
+  .footer-brand p { font-size: 13px; font-weight: 300; color: var(--text-secondary); line-height: 1.7; margin-top: 16px; }
+  .footer-col h4 { font-family: var(--font-label); font-size: 10px; font-weight: 600; letter-spacing: 0.18em; color: var(--gold); text-transform: uppercase; margin-bottom: 16px; }
+  .footer-col ul { list-style: none; }
+  .footer-col li { margin-bottom: 10px; }
+  .footer-col a { font-size: 13px; font-weight: 300; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+  .footer-col a:hover { color: var(--gold); }
+  .footer-bottom { display: flex; align-items: center; justify-content: space-between; }
+  .footer-copy { font-family: var(--font-label); font-size: 10px; letter-spacing: 0.1em; color: var(--text-secondary); }
+  .footer-contact { font-size: 13px; font-weight: 300; color: var(--text-secondary); }
+  .footer-contact a { color: var(--gold-dark); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0 24px; }
+    .nav-links { display: none; }
+    .page-hero { grid-template-columns: 1fr; min-height: 0; padding-top: 72px; }
+    .page-hero-img { height: 75vh; min-height: 440px; border-left: none; border-bottom: 1px solid var(--brown-border); order: -1; }
+    .page-hero-img img { object-position: center 18%; }
+    .page-hero-text { padding: 48px 24px; max-width: 100%; justify-self: stretch; }
+    .stat-bar { grid-template-columns: repeat(3, 1fr); }
+    .stat-item:nth-child(4), .stat-item:nth-child(5) { border-top: 1px solid var(--brown-border); }
+    .story { padding: 64px 24px; } .story-inner { grid-template-columns: 1fr; gap: 48px; } .story-img-accent { right: 0; }
+    .season-split { padding: 64px 24px; } .season-row { grid-template-columns: 1fr; gap: 32px; } .season-row.reverse { direction: ltr; }
+    .included { padding: 64px 24px; } .included-grid { grid-template-columns: 1fr; }
+    .legacy-banner { flex-direction: column; padding: 48px 24px; gap: 40px; } .legacy-banner-img { width: 100%; }
+    .lion-gallery { grid-template-columns: 1fr 1fr; height: auto; } .lion-gallery-img { height: 180px; }
+    .details { padding: 64px 24px; } .details-grid { grid-template-columns: 1fr; gap: 0; }
+    .cta-band { padding: 40px 24px; flex-direction: column; text-align: center; }
+    .cta-band-actions { justify-content: center; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+  }
+
+  /* ── LODGE GALLERY GRID ── */
+  .lodge-gallery { padding: 100px 48px; background: var(--brown-deep); }
+  .lodge-grid { max-width: 1200px; margin: 48px auto 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .lodge-tile { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--brown-dark); border: 1px solid var(--brown-border); }
+  .lodge-tile img { width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.84) saturate(0.8); transition: transform 0.5s ease, filter 0.4s ease; display: block; }
+  .lodge-tile:hover img { transform: scale(1.05); filter: brightness(1) saturate(0.95); }
+  .lodge-tile .cap { position: absolute; left: 0; right: 0; bottom: 0; padding: 22px 14px 11px; background: linear-gradient(180deg, transparent, rgba(13,10,6,0.9)); font-family: var(--font-label); font-size: 10px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--cream); }
+  @media (max-width: 900px) {
+    .lodge-gallery { padding: 64px 16px; }
+    .lodge-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGO PIN -->
+<div style="position:fixed; top:-35px; left:0; z-index:200; pointer-events:none;">
+  <img src="images/logo.png" alt="Smith Rancho" style="height:280px; width:280px; object-fit:contain; display:block; filter:drop-shadow(0 2px 16px rgba(0,0,0,0.8));">
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"></div>
+  <ul class="nav-links">
+    <li><a href="about.html">About</a></li>
+    <li><a href="elk.html">Elk Hunts</a></li>
+    <li><a href="muledeer.html">Mule Deer</a></li>
+    <li><a href="antelope.html">Antelope</a></li>
+    <li><a href="mountainlion.html">Mountain Lion</a></li>
+    <li><a href="rates.html">Rates &amp; Dates</a></li>
+    <li><a href="accommodations.html" class="active">Accommodations</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+  </ul>
+  <button class="nav-cta" onclick="window.location.href='contact.html'">Book a Hunt</button>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-text">
+    <div class="hero-eyebrow">The Lodge · Smith Rancho</div>
+    <h1 class="page-hero-h1">Your Home <em>on the Mountain</em></h1>
+    <p class="page-hero-sub">After a hard day in the field, you come back to a warm, comfortable lodge right on the ranch — home-cooked meals, private rooms, and a great room full of trophies. No long drives to camp; you're steps from the hunt every morning.</p>
+  </div>
+  <div class="page-hero-img"><img src="images/lodge-15.jpg" alt="The trophy great room at the Smith Rancho lodge" style="object-position:center;"></div>
+</section>
+
+<!-- STAT BAR -->
+<div class="stat-bar">
+  <div class="stat-item"><span class="stat-num">Great Room</span><span class="stat-label">Trophies &amp; lounge</span></div>
+  <div class="stat-item"><span class="stat-num">Guest Rooms</span><span class="stat-label">Private &amp; comfortable</span></div>
+  <div class="stat-item"><span class="stat-num">Full Kitchen</span><span class="stat-label">Granite &amp; modern</span></div>
+  <div class="stat-item"><span class="stat-num">Tiled Baths</span><span class="stat-label">Slate showers</span></div>
+  <div class="stat-item"><span class="stat-num">On-Site</span><span class="stat-label">Right on the ranch</span></div>
+</div>
+
+<!-- STORY -->
+<section class="story">
+  <div class="story-inner">
+    <div class="story-text">
+      <div class="section-eyebrow" style="justify-content:flex-start; margin-bottom:14px;">The Lodge</div>
+      <h2>Comfort at the end of <em>every hunt</em></h2>
+      <div class="story-body">
+        <p>The lodge sits right on the ranch, surrounded by the same country you'll hunt all day. Come back each evening to a warm room, a hot shower, and a home-cooked meal — no driving back to town, no roughing it in a tent.</p>
+        <p>The great room is the heart of it: vaulted wood ceilings, an antler chandelier, and walls lined with decades of trophies taken right here. It's where hunters gather after dark to swap stories and plan the next morning.</p>
+        <p>Whether you stay in the main lodge or the log cabin, the goal is the same — rest well, eat well, and wake up ready for another day on 62,000 acres of Colorado high country.</p>
+      </div>
+    </div>
+    <div class="story-img-wrap">
+      <div class="story-img" style="background-image:url('images/lodge-01.jpg'); background-position:center;"></div>
+      <div class="story-img-accent">
+        <div class="story-accent-num">1894</div>
+        <div class="story-accent-text">Ranch established</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE SPLIT SECTIONS -->
+<section class="season-split">
+  <div class="season-row">
+    <div class="season-img" style="background-image:url('images/lodge-03.jpg'); background-position:center;">
+      <span class="season-tag">Rest · Private Guest Rooms</span>
+    </div>
+    <div class="season-text">
+      <h3>Sleep like you <em>earned it</em></h3>
+      <p>Comfortable private rooms with real beds and quiet nights — the kind of rest you need before a 4:30 wake-up. Warm, simple, and welcoming, with that classic lodge feel throughout.</p>
+      <p>You'll spend your days covering hard country. The lodge is where you recover for the next one.</p>
+    </div>
+  </div>
+  <div class="season-row reverse">
+    <div class="season-img" style="background-image:url('images/lodge-08.jpg'); background-position:center;">
+      <span class="season-tag">Gather · Kitchen &amp; Dining</span>
+    </div>
+    <div class="season-text">
+      <h3>Home-cooked, <em>every day</em></h3>
+      <p>A full modern kitchen and a table big enough for the whole camp. Hearty breakfasts before first light, lunches packed for the field, and full dinners waiting when you come off the mountain.</p>
+      <p>Nobody goes hungry at Smith Rancho — good food is part of the hunt.</p>
+    </div>
+  </div>
+  <div class="season-row">
+    <div class="season-img" style="background-image:url('images/lodge-12.jpg'); background-position:center;">
+      <span class="season-tag">The Cabin · Log Retreat</span>
+    </div>
+    <div class="season-text">
+      <h3>The <em>log cabin</em></h3>
+      <p>A classic hand-built log cabin rounds out the lodging — log walls, a cozy lounge, and that timeless Western feel. A great option for a smaller group or anyone who wants a little extra quiet.</p>
+      <p>Lit up at dusk against the Colorado sky, it's about as good as a hunting basecamp gets.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AMENITIES -->
+<section class="included">
+  <div class="section-header">
+    <div class="section-eyebrow">Your Stay</div>
+    <h2 class="section-title">What's waiting for you</h2>
+  </div>
+  <div class="included-grid">
+    <div class="included-card"><div class="included-num">01</div><h4>Private Rooms</h4><p>Comfortable guest rooms with real beds, so you're rested and ready for the next morning's hunt.</p></div>
+    <div class="included-card"><div class="included-num">02</div><h4>Home-Cooked Meals</h4><p>Hearty breakfasts, field lunches, and full dinners back at the lodge throughout your stay.</p></div>
+    <div class="included-card"><div class="included-num">03</div><h4>The Great Room</h4><p>A warm lounge surrounded by trophies — the perfect place to gather and swap stories after dark.</p></div>
+    <div class="included-card"><div class="included-num">04</div><h4>Full Kitchen &amp; Dining</h4><p>Granite counters, modern appliances, and a big table where the whole camp eats together.</p></div>
+    <div class="included-card"><div class="included-num">05</div><h4>Hot Showers &amp; Baths</h4><p>Tiled slate showers and vanities to clean up and warm up after a long day in the field.</p></div>
+    <div class="included-card"><div class="included-num">06</div><h4>Right on the Ranch</h4><p>The lodge sits on the property — no long drives. You're steps from the hunt every morning.</p></div>
+  </div>
+</section>
+
+<!-- LODGE GALLERY GRID -->
+<section class="lodge-gallery">
+  <div class="section-header" style="margin-bottom:0;">
+    <div class="section-eyebrow">A Look Inside</div>
+    <h2 class="section-title">The lodge &amp; cabin</h2>
+  </div>
+  <div class="lodge-grid">
+    <div class="lodge-tile"><img src="images/lodge-02.jpg" alt="Great room lounge"><span class="cap">The Great Room</span></div>
+    <div class="lodge-tile"><img src="images/lodge-16.jpg" alt="Trophy mounts in the lodge"><span class="cap">Trophy Display</span></div>
+    <div class="lodge-tile"><img src="images/lodge-17.jpg" alt="Big game mounts"><span class="cap">Big Game Mounts</span></div>
+    <div class="lodge-tile"><img src="images/lodge-01.jpg" alt="Trophy wall"><span class="cap">Trophy Wall</span></div>
+    <div class="lodge-tile"><img src="images/lodge-03.jpg" alt="Guest room"><span class="cap">Guest Room</span></div>
+    <div class="lodge-tile"><img src="images/lodge-08.jpg" alt="Kitchen"><span class="cap">The Kitchen</span></div>
+    <div class="lodge-tile"><img src="images/lodge-04.jpg" alt="Walk-in shower"><span class="cap">Walk-In Shower</span></div>
+    <div class="lodge-tile"><img src="images/lodge-05.jpg" alt="Vanity and bath"><span class="cap">Vanity &amp; Bath</span></div>
+    <div class="lodge-tile"><img src="images/lodge-09.jpg" alt="Cabin lounge"><span class="cap">Cabin Lounge</span></div>
+    <div class="lodge-tile"><img src="images/lodge-10.jpg" alt="Inside the cabin"><span class="cap">Inside the Cabin</span></div>
+    <div class="lodge-tile"><img src="images/lodge-11.jpg" alt="Cabin entrance"><span class="cap">Cabin Entrance</span></div>
+    <div class="lodge-tile"><img src="images/lodge-13.jpg" alt="The log cabin"><span class="cap">The Log Cabin</span></div>
+    <div class="lodge-tile"><img src="images/lodge-14.jpg" alt="Cabin and grounds"><span class="cap">The Cabin &amp; Grounds</span></div>
+    <div class="lodge-tile"><img src="images/lodge-12.jpg" alt="Cabin at dusk"><span class="cap">The Cabin at Dusk</span></div>
+    <div class="lodge-tile"><img src="images/lodge-06.jpg" alt="The lodge at night"><span class="cap">The Lodge at Night</span></div>
+  </div>
+</section>
+
+<!-- EXTERIOR BANNER -->
+<div class="legacy-banner">
+  <div class="legacy-banner-text">
+    <h2>Wake up <em>on the mountain</em></h2>
+    <p>There's no substitute for staying right where you hunt. Roll out of bed before dawn, grab breakfast, and step straight into the country — then come home to warm lights, good food, and the great room at the end of the day.</p>
+  </div>
+  <div class="legacy-banner-img" style="background:url('images/lodge-07.jpg') center / cover;"></div>
+</div>
+
+<!-- CTA BAND -->
+<div class="cta-band">
+  <div class="cta-band-text">
+    <h2>Ready to book your stay?</h2>
+    <p>Lodging is included with your hunt. Call Brad to talk dates, group size, and what to expect when you get to the ranch.</p>
+  </div>
+  <div class="cta-band-actions">
+    <div class="cta-phone">602.369.3522</div>
+    <button class="btn-dark" onclick="window.location.href='mailto:derek@smithrancho.com'">Email Us</button>
+    <button class="btn-outline-dark" onclick="window.location.href='rates.html'">Rates &amp; Dates</button>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div style="display:flex; align-items:center; gap:14px; margin-bottom:16px;">
+        <img src="images/logo-footer.png" alt="Smith Rancho" style="height:88px; width:88px; object-fit:contain; opacity:0.9;">
+        <div>
+          <span class="footer-logo-main">Smith Rancho</span>
+          <span class="footer-logo-sub" style="display:block;">Trophy Hunts · Northwest Colorado</span>
+        </div>
+      </div>
+      <p>One of Northwest Colorado's premier hunting ranches. 150,000 private acres in the heart of the Rocky Mountains — elk, mule deer, antelope, and mountain lion.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Hunts</h4>
+      <ul>
+        <li><a href="elk.html">Colorado Elk Hunting</a></li>
+        <li><a href="muledeer.html">Mule Deer Hunting</a></li>
+        <li><a href="antelope.html">Antelope Hunting</a></li>
+        <li><a href="mountainlion.html">Mountain Lion Hunting</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ranch</h4>
+      <ul>
+        <li><a href="about.html">About Smith Rancho</a></li>
+        <li><a href="accommodations.html">The Lodge</a></li>
+        <li><a href="gallery.html">Hunting Photos</a></li>
+        <li><a href="rates.html">Rates &amp; Dates</a></li>
+        <li><a href="contact.html">Book a Hunt</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="rates.html">Rates &amp; Dates</a></li>
+        <li><a href="contact.html">Book a Hunt</a></li>
+        <li><a href="tel:6023693522">602.369.3522</a></li>
+        <li><a href="mailto:derek@smithrancho.com">Email Us</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 Smith Rancho Trophy Hunts · All rights reserved</div>
+    <div class="footer-contact">Hayden, Colorado · <a href="mailto:derek@smithrancho.com">derek@smithrancho.com</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
