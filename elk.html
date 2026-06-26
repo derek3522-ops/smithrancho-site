@@ -3,6 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Colorado elk hunting on 62,000 private acres near Steamboat Springs. Guaranteed over-the-counter licenses, a 90-day season, and trophy 6-point bulls.">
+<link rel="canonical" href="https://www.smithrancho.com/elk.html">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Smith Rancho Trophy Hunts">
+<meta property="og:title" content="Colorado Elk Hunting — Smith Rancho">
+<meta property="og:description" content="Colorado elk hunting on 62,000 private acres near Steamboat Springs. Guaranteed over-the-counter licenses, a 90-day season, and trophy 6-point bulls.">
+<meta property="og:url" content="https://www.smithrancho.com/elk.html">
+<meta property="og:image" content="https://www.smithrancho.com/images/elk-05-hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Colorado Elk Hunting — Smith Rancho">
+<meta name="twitter:description" content="Colorado elk hunting on 62,000 private acres near Steamboat Springs. Guaranteed over-the-counter licenses, a 90-day season, and trophy 6-point bulls.">
+<meta name="twitter:image" content="https://www.smithrancho.com/images/elk-05-hero.jpg">
+<link rel="icon" href="images/logo.png">
+<link rel="apple-touch-icon" href="images/logo.png">
 <title>Colorado Elk Hunting – Smith Rancho Trophy Hunts</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Barlow:wght@300;400;500&family=Barlow+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
@@ -831,12 +846,54 @@
     .page-hero-img { height: 58vh; min-height: 340px; border-left: none; border-bottom: 1px solid var(--brown-border); order: -1; }
     .page-hero-text { padding: 48px 24px; max-width: 100%; justify-self: stretch; }
   }
+
+  /* ── MOBILE NAV / HAMBURGER ── */
+  .nav-toggle { display: none; }
+  @media (max-width: 900px) {
+    nav { justify-content: flex-end; gap: 14px; }
+    .nav-logo { display: none; }
+    .nav-cta { padding: 9px 16px; font-size: 10px; }
+    .logo-pin-img { height: 130px !important; width: 130px !important; }
+    .logo-pin { top: -14px !important; }
+    .nav-toggle { display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 42px; height: 42px; padding: 9px; background: transparent; border: none; cursor: pointer; z-index: 110; }
+    .nav-toggle span { display: block; width: 100%; height: 2px; background: var(--gold); border-radius: 2px; transition: transform 0.3s ease, opacity 0.2s ease; }
+    body.nav-open .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    body.nav-open .nav-toggle span:nth-child(2) { opacity: 0; }
+    body.nav-open .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .nav-links { display: flex !important; position: fixed; top: 72px; left: 0; right: 0; flex-direction: column; gap: 0; padding: 6px 0; margin: 0; background: rgba(13,10,6,0.98); border-bottom: 1px solid var(--brown-border); backdrop-filter: blur(10px); transform: translateY(-14px); opacity: 0; visibility: hidden; transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease; max-height: calc(100vh - 72px); overflow-y: auto; }
+    body.nav-open .nav-links { transform: translateY(0); opacity: 1; visibility: visible; }
+    .nav-links li { width: 100%; }
+    .nav-links a { display: block; padding: 15px 26px; font-size: 13px; border-bottom: 1px solid rgba(58,46,26,0.45); }
+    .nav-links li:last-child a { border-bottom: none; }
+    body.nav-open { overflow: hidden; }
+  }
+
+  /* ── MOBILE HARDENING ── */
+  html, body { overflow-x: hidden; max-width: 100%; }
+  @media (max-width: 900px) {
+    .hero-actions, .cta-band-actions, .page-hero-text { flex-wrap: wrap; }
+    .hero-h1 { font-size: clamp(30px, 8.5vw, 52px); }
+    .page-hero-h1 { font-size: clamp(32px, 8.5vw, 58px); }
+    .hero-scroll { display: none; }
+    .hero-badge { right: 16px; bottom: 16px; padding: 12px 16px; }
+    .stat-num { font-size: 18px; }
+  }
+  @media (max-width: 480px) {
+    nav { padding: 0 14px; }
+    .logo-pin-img { height: 104px !important; width: 104px !important; }
+    .logo-pin { top: -10px !important; }
+    .hero-content { padding: 0 18px; }
+    .hero-h1 { font-size: clamp(28px, 9vw, 40px); }
+    .nav-cta { padding: 8px 12px; font-size: 9px; }
+    .stat-bar { grid-template-columns: repeat(2, 1fr); }
+    .mem-portrait { width: 230px; }
+  }
 </style>
 </head>
 <body>
 
-<div style="position:fixed; top:-35px; left:0; z-index:200; pointer-events:none;">
-  <img src="images/logo.png" alt="Smith Rancho" style="height:280px; width:280px; object-fit:contain; display:block; filter:drop-shadow(0 2px 16px rgba(0,0,0,0.8));">
+<div class="logo-pin" style="position:fixed; top:-35px; left:0; z-index:200; pointer-events:none;">
+  <img class="logo-pin-img" src="images/logo.png" alt="Smith Rancho" style="height:280px; width:280px; object-fit:contain; display:block; filter:drop-shadow(0 2px 16px rgba(0,0,0,0.8));">
 </div>
 <nav>
   <div class="nav-logo"></div>
@@ -851,6 +908,7 @@
     <li><a href="gallery.html">Gallery</a></li>
   </ul>
   <button class="nav-cta" onclick="window.location.href='contact.html'">Book a Hunt</button>
+  <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
 
 <section class="page-hero">
@@ -1038,5 +1096,15 @@
   </div>
 </footer>
 
+<script>
+(function(){
+  var t=document.querySelector('.nav-toggle');
+  if(!t) return;
+  function close(){document.body.classList.remove('nav-open');t.setAttribute('aria-expanded','false');}
+  t.addEventListener('click',function(){var o=document.body.classList.toggle('nav-open');t.setAttribute('aria-expanded',o?'true':'false');});
+  document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',close);});
+  window.addEventListener('resize',function(){if(window.innerWidth>900)close();});
+})();
+</script>
 </body>
 </html>

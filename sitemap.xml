@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://www.smithrancho.com/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.smithrancho.com/about.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.smithrancho.com/elk.html</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.smithrancho.com/muledeer.html</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.smithrancho.com/antelope.html</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.smithrancho.com/mountainlion.html</loc><changefreq>yearly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.smithrancho.com/rates.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.smithrancho.com/accommodations.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.smithrancho.com/gallery.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://www.smithrancho.com/contact.html</loc><changefreq>yearly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.smithrancho.com/gimpy.html</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
+</urlset>
