@@ -120,7 +120,7 @@
     inset: 0;
     background:
       linear-gradient(105deg, rgba(13,10,6,0.97) 0%, rgba(13,10,6,0.85) 38%, rgba(13,10,6,0.4) 65%, rgba(13,10,6,0.15) 100%),
-      url('images/antelope-02.jpg') center 50% / cover no-repeat;
+      url('images/antelope-02.jpg') center 50% / contain no-repeat;
   }
   .hero-content {
     position: relative;
@@ -746,7 +746,7 @@
   }
 
   .page-hero { position: relative; height: 58vh; min-height: 420px; max-height: 620px; display: flex; align-items: flex-end; overflow: hidden; }
-  .page-hero-bg { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(13,10,6,0.5) 0%, rgba(13,10,6,0.15) 30%, rgba(13,10,6,0.8) 100%), url('images/antelope-07.jpg') center 50% / cover no-repeat; }
+  .page-hero-bg { position: absolute; inset: 0; background-color: var(--brown-deep); background: linear-gradient(180deg, rgba(13,10,6,0.5) 0%, rgba(13,10,6,0.15) 30%, rgba(13,10,6,0.8) 100%), url('images/antelope-07.jpg') center 50% / contain no-repeat; }
   .page-hero-content { position: relative; padding: 0 48px 64px; max-width: 760px; animation: fadeUp 1s ease both; }
   .page-hero .hero-eyebrow { margin-bottom: 18px; }
   .page-hero-h1 { font-family: var(--font-display); font-size: clamp(40px, 6vw, 76px); font-weight: 700; line-height: 1.05; color: var(--cream); margin-bottom: 18px; letter-spacing: -0.01em; }
