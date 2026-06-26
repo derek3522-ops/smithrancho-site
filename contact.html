@@ -798,6 +798,18 @@
     .form-row { grid-template-columns: 1fr; gap: 0; }
   }
 
+
+  /* ── SPLIT HERO OVERRIDE ── */
+  .page-hero { display: grid; grid-template-columns: 1fr 1fr; aspect-ratio: auto; width: 100%; min-height: 640px; max-height: none; background: var(--brown-deep); padding-top: 72px; align-items: stretch; overflow: hidden; }
+  .page-hero-text { display: flex; flex-direction: column; justify-content: center; padding: 56px 56px; max-width: 700px; justify-self: end; animation: fadeUp 1s ease both; }
+  .page-hero-img { position: relative; background: var(--brown-dark); border-left: 1px solid var(--brown-border); overflow: hidden; }
+  .page-hero-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .page-hero-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(13,10,6,0.5) 0%, transparent 18%); pointer-events: none; }
+  @media (max-width: 900px) {
+    .page-hero { grid-template-columns: 1fr; min-height: 0; padding-top: 72px; }
+    .page-hero-img { height: 58vh; min-height: 340px; border-left: none; border-bottom: 1px solid var(--brown-border); order: -1; }
+    .page-hero-text { padding: 48px 24px; max-width: 100%; justify-self: stretch; }
+  }
 </style>
 </head>
 <body>
@@ -819,12 +831,12 @@
 </nav>
 
 <section class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-content">
+  <div class="page-hero-text">
     <div class="hero-eyebrow">Contact &middot; Book Your Hunt</div>
     <h1 class="page-hero-h1">Let's Plan <em>Your Hunt</em></h1>
     <p class="page-hero-sub">Spots fill fast and licenses are guaranteed. Reach out and we'll help you put together the trip of a lifetime.</p>
   </div>
+  <div class="page-hero-img"><img src="images/photo-09-hero.jpg" alt="Smith Rancho ranch country"></div>
 </section>
 
 <section class="contact-main">
@@ -864,7 +876,7 @@
         <div>
           <div class="contact-detail-label">The Hunt</div>
           <div class="contact-detail-value">Elk &middot; Mule Deer &middot; Antelope</div>
-          <div class="contact-detail-note">57,000 private acres &middot; 90-day season &middot; guaranteed licenses</div>
+          <div class="contact-detail-note">62,000 private acres &middot; 90-day season &middot; guaranteed licenses</div>
         </div>
       </div>
     </div>
@@ -940,7 +952,7 @@
           <span class="footer-logo-sub" style="display:block;">Trophy Hunts · Northwest Colorado</span>
         </div>
       </div>
-      <p>One of Northwest Colorado's premier elk and mule deer hunting ranches. 57,000 private acres in the heart of the Rocky Mountains.</p>
+      <p>One of Northwest Colorado's premier elk and mule deer hunting ranches. 62,000 private acres in the heart of the Rocky Mountains.</p>
     </div>
     <div class="footer-col">
       <h4>Hunts</h4>
@@ -948,7 +960,7 @@
         <li><a href="elk.html">Colorado Elk Hunting</a></li>
         <li><a href="muledeer.html">Mule Deer Hunting</a></li>
         <li><a href="antelope.html">Antelope Hunting</a></li>
-        <li><a href="#">Other Hunts</a></li>
+        <li><a href="mountainlion.html">Mountain Lion Hunting</a></li>
       </ul>
     </div>
     <div class="footer-col">

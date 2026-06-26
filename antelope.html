@@ -819,6 +819,18 @@
     .sp-gallery { grid-template-columns: 1fr 1fr; height: auto; } .sp-gallery-img { height: 180px; }
   }
 
+
+  /* ── SPLIT HERO OVERRIDE ── */
+  .page-hero { display: grid; grid-template-columns: 1fr 1fr; aspect-ratio: auto; width: 100%; min-height: 640px; max-height: none; background: var(--brown-deep); padding-top: 72px; align-items: stretch; overflow: hidden; }
+  .page-hero-text { display: flex; flex-direction: column; justify-content: center; padding: 56px 56px; max-width: 700px; justify-self: end; animation: fadeUp 1s ease both; }
+  .page-hero-img { position: relative; background: var(--brown-dark); border-left: 1px solid var(--brown-border); overflow: hidden; }
+  .page-hero-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .page-hero-img::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(13,10,6,0.5) 0%, transparent 18%); pointer-events: none; }
+  @media (max-width: 900px) {
+    .page-hero { grid-template-columns: 1fr; min-height: 0; padding-top: 72px; }
+    .page-hero-img { height: 58vh; min-height: 340px; border-left: none; border-bottom: 1px solid var(--brown-border); order: -1; }
+    .page-hero-text { padding: 48px 24px; max-width: 100%; justify-self: stretch; }
+  }
 </style>
 </head>
 <body>
@@ -841,18 +853,18 @@
 </nav>
 
 <section class="page-hero">
-  <div class="page-hero-bg"></div>
-  <div class="page-hero-content">
+  <div class="page-hero-text">
     <div class="hero-eyebrow">Colorado Pronghorn Antelope · Moffat County</div>
     <h1 class="page-hero-h1">Record-Class <em>Pronghorn</em></h1>
     <p class="page-hero-sub">Northwest Colorado — Moffat County in particular — is known for its record-class pronghorn antelope. Herds of a hundred or more roam our sagebrush canyons and rolling hills.</p>
   </div>
+  <div class="page-hero-img"><img src="images/antelope-07-hero.jpg" alt="Pronghorn antelope on the Smith Rancho range"></div>
 </section>
 <div class="stat-bar">
   <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Opportunity</span></div>
   <div class="stat-item"><span class="stat-num">70s</span><span class="stat-label">Buck class (mid–high)</span></div>
   <div class="stat-item"><span class="stat-num">100+</span><span class="stat-label">Herd size</span></div>
-  <div class="stat-item"><span class="stat-num">57,000</span><span class="stat-label">Private acres</span></div>
+  <div class="stat-item"><span class="stat-num">62,000</span><span class="stat-label">Private acres</span></div>
   <div class="stat-item"><span class="stat-num">Zero</span><span class="stat-label">Applications needed</span></div>
 </div>
 
@@ -907,7 +919,7 @@
     <div class="included-card"><div class="included-num">02</div><h4>All Meals</h4><p>Home-cooked meals throughout your stay. We keep hunters well-fed and fueled for long days in the field.</p></div>
     <div class="included-card"><div class="included-num">03</div><h4>Guaranteed License</h4><p>Your license comes through the Ranching for Wildlife program. No draw, no application, no waiting — it's guaranteed.</p></div>
     <div class="included-card"><div class="included-num">04</div><h4>Expert Guiding</h4><p>Two hunters per guide. Every guide is intimately familiar with the ranch and its game.</p></div>
-    <div class="included-card"><div class="included-num">05</div><h4>Transportation</h4><p>Travel to and from the hunting areas is provided. No need to navigate 57,000 acres on your own.</p></div>
+    <div class="included-card"><div class="included-num">05</div><h4>Transportation</h4><p>Travel to and from the hunting areas is provided. No need to navigate 62,000 acres on your own.</p></div>
     <div class="included-card"><div class="included-num">06</div><h4>Game Care</h4><p>Proper field dressing and care of your animal after the harvest, so your meat and cape make it home in top condition.</p></div>
   </div>
 </section>
@@ -981,7 +993,7 @@
           <span class="footer-logo-sub" style="display:block;">Trophy Hunts · Northwest Colorado</span>
         </div>
       </div>
-      <p>One of Northwest Colorado's premier elk and mule deer hunting ranches. 57,000 private acres in the heart of the Rocky Mountains.</p>
+      <p>One of Northwest Colorado's premier elk and mule deer hunting ranches. 62,000 private acres in the heart of the Rocky Mountains.</p>
     </div>
     <div class="footer-col">
       <h4>Hunts</h4>
@@ -989,7 +1001,7 @@
         <li><a href="elk.html">Colorado Elk Hunting</a></li>
         <li><a href="muledeer.html">Mule Deer Hunting</a></li>
         <li><a href="antelope.html">Antelope Hunting</a></li>
-        <li><a href="#">Other Hunts</a></li>
+        <li><a href="mountainlion.html">Mountain Lion Hunting</a></li>
       </ul>
     </div>
     <div class="footer-col">
